@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <P>if the number and click ok:</P>
+   <input id="id1" type="number" min="18" required>
+   <button onclick="myFunction()">ok</button>
+   <P>  the age  must be greater or equal to 18 ,if not an error message will be displayed.</P>
+   <P id="result"></P>
+    <script>
+        function validateForm() {
+            var x = document.forms["myForm"]["fname"].value;
+            if (x==""){
+                alert("name must be filler out");
+                return false;
+            }
+        } </script>
+        <form name="myForm" onsubmit = "validateForm()">
+            name: <input type="text" name ="fname">
+            <input type="submit" value="submit">
+            <P id="message"></P>
+
+            </form>
+            <script>
+                function myFunction() {
+                    var inpObj=document.getElementById("id1");
+                    if (!inpObj.checkValidity()
+                    ) {
+                document.getElementById("result").innerHTML=inpObj.validationMessage;}
+                else{document.getElementById("result").innerHTML="input ok"}}
+                
+               </script>
+</body>
+</html>
